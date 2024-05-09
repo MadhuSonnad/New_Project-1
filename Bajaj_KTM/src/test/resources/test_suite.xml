@@ -3,8 +3,7 @@
 		name="test suite">
 		<classes>
 			<class
-				name="Mainclass.Loginpagemainpage"
-			/>
+				name="Mainclass.Loginpagemainpage"/>
 		</classes>
 	</test>
 </suite>
