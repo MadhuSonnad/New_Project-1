@@ -27,12 +27,11 @@ public class Loginpagemainpage extends Baseclass {
 	JavascriptExecutor js;
 
 	@Test(priority = 2, enabled = true)
-	public void Loginpage() throws Throwable 
-	{
+	public void Loginpage() throws Throwable {
 		driver.manage().window().maximize();
 		// driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		Thread.sleep(2000);
-		//Object_Repo.Loginpage login = new Object_Repo.Loginpage(driver);
+		// Object_Repo.Loginpage login = new Object_Repo.Loginpage(driver);
 		Thread.sleep(2000);
 		WebElement element = driver.findElement(
 				By.xpath("(//span[@class=\"cursor-pointer\"]//following::*[@class=\"ktm-file-actions\"])[8]"));
@@ -49,7 +48,7 @@ public class Loginpagemainpage extends Baseclass {
 			System.out.println("Toster mess is Not displayed");
 		}
 		Thread.sleep(2000);
-		//assertEquals(false, "Script make fail");
+		// assertEquals(false, "Script make fail");
 	}
 
 	@Test(priority = 1) // (enabled = false)
@@ -70,7 +69,7 @@ public class Loginpagemainpage extends Baseclass {
 		Thread.sleep(2000);
 	}
 
-	@Test (priority = 3) //(enabled = false)
+	@Test(priority = 3) // (enabled = false)
 	private void addCustomrVoicee() throws Throwable {
 		// driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		Add_customer_Voice ad = new Add_customer_Voice(driver);
@@ -86,7 +85,7 @@ public class Loginpagemainpage extends Baseclass {
 		ad.senddata1(getdata);
 		ad.addNEwCustomerVoice1();
 		Thread.sleep(2000);
-		//assertEquals(false, "make a script fail ");
+		// assertEquals(false, "make a script fail ");
 
 	}
 
@@ -104,8 +103,7 @@ public class Loginpagemainpage extends Baseclass {
 	}
 
 	@Test(priority = 5) // (enabled = true)
-	private void addCustomerVoiceLevel() throws Throwable 
-	{
+	private void addCustomerVoiceLevel() throws Throwable {
 
 		Thread.sleep(2000);
 		Add_customer_lvl a2 = new Add_customer_lvl(driver);
@@ -116,43 +114,41 @@ public class Loginpagemainpage extends Baseclass {
 		a2.passdata_txtField(data1);
 		Thread.sleep(2000);
 		a2.clickbackbtn();
-		//driver.close();
+		// driver.close();
 	}
 
 	@Test(priority = 6)
-	private void product_Improvementpage() throws Throwable
-	{
+	private void product_Improvementpage() throws Throwable {
 		wlib.maximizeWindow(driver);
 		wlib.ImapliciateWaite(driver);
 		Thread.sleep(3000);
 
 		js = (JavascriptExecutor) driver;
-		for (int i = 0; i < 2; i++) 
-		{	
+		for (int i = 0; i < 2; i++) {
 			js.executeScript("window.scrollBy(0,200)");
 			Thread.sleep(2000);
-		}	
-		Product_Improvement PI=new Product_Improvement(driver);
+		}
+		Product_Improvement PI = new Product_Improvement(driver);
 		PI.Product();
 		js.executeScript("window.scrollBy(0,300)");
 	}
 
 	@Test(priority = 7)
-	private void sparePartCatalogue() throws Throwable 
-	{
+	private void sparePartCatalogue() throws Throwable {
 		wlib.maximizeWindow(driver);
 		wlib.ImapliciateWaite(driver);
 		Thread.sleep(2000);
-		Spare_part_catalogue ss=new Spare_part_catalogue(driver);
+		Spare_part_catalogue ss = new Spare_part_catalogue(driver);
 		String urlp1 = elib.getdatafromExcel("Sheet1", 1, 2) + rlib.randomnum();
 		String urlp2 = elib.getdatafromExcel("Sheet1", 1, 3) + rlib.randomnum();
 		String urlp3 = elib.getdatafromExcel("Sheet1", 1, 4) + rlib.randomnum();
 		ss.getAddurlbtn();
 		ss.getUrltxtfld();
-		ss.sparePart(urlp1,urlp2,urlp3);
+		ss.sparePart(urlp1, urlp2, urlp3);
 		ss.getUploadbtn();
 		Thread.sleep(2000);
-		WebElement elements = driver.findElement(By.xpath("(//div[@class='d-flex justify-content-end flex-shrink-0 gap-1']//following-sibling::*)[20]"));
+		WebElement elements = driver.findElement(
+				By.xpath("(//div[@class='d-flex justify-content-end flex-shrink-0 gap-1']//following-sibling::*)[20]"));
 		Thread.sleep(2000);
 		elements.click();
 	}
