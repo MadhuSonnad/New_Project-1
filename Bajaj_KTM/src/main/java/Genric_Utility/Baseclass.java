@@ -27,7 +27,8 @@ public class Baseclass {
 		String Browser = file1.getpropertyvalue("browser");
 		String chromePath = file1.getpropertyvalue("chromePath");
 
-		if (Browser.contains("chrome")) {
+		if (Browser.contains("chrome")) 
+		{
 			System.setProperty("webdriver.chrome.driver", chromePath);
 			// WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
@@ -38,7 +39,7 @@ public class Baseclass {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 		} else {
-			driver = new ChromeDriver();
+			driver = new EdgeDriver();
 		}
 		sdriver = driver;
 		System.out.println("Launching browser");
