@@ -1,0 +1,10 @@
+<suite name="suite">
+	<test
+		name="test suite">
+		<classes>
+			<class
+				name="Mainclass.Loginpagemainpage"
+			/>
+		</classes>
+	</test>
+</suite>
