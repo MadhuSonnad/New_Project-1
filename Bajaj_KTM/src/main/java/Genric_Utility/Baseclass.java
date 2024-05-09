@@ -27,9 +27,9 @@ public class Baseclass {
 		String Browser = file1.getpropertyvalue("browser");
 
 		if (Browser.contains("chrome")) {
-			System.setProperty("webdriver.chrome.driver",
-					"C:\\Users\\madhu.sonnad\\eclipse-workspace\\Bajaj_KTM\\Browser\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver","C:\\Users\\madhu.sonnad\\eclipse-workspace\\Bajaj_KTM\\Browser\\chromedriver.exe");
 			// WebDriverManager.chromedriver().setup();
+			
 			driver = new ChromeDriver();
 		} else if (Browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
