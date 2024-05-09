@@ -1,9 +1,5 @@
 package Mainclass;
 
-import static org.testng.Assert.assertEquals;
-
-import java.util.Iterator;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -11,7 +7,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 import Genric_Utility.Baseclass;
 import Genric_Utility.Excel_utility;
@@ -23,7 +18,6 @@ import Object_Repo.Add_customer_lvl;
 import Object_Repo.Bannerupload;
 import Object_Repo.Product_Improvement;
 import Object_Repo.Spare_part_catalogue;
-import net.bytebuddy.description.annotation.AnnotationList.Empty;
 
 public class Loginpagemainpage extends Baseclass {
 	File_Utility flib = new File_Utility();
@@ -32,8 +26,7 @@ public class Loginpagemainpage extends Baseclass {
 	Webdriver_Utility wlib = new Webdriver_Utility();
 	JavascriptExecutor js;
 
-
-	/*	@Test(priority = 2, enabled = true)
+	@Test(priority = 2, enabled = true)
 	public void Loginpage() throws Throwable 
 	{
 		driver.manage().window().maximize();
@@ -113,7 +106,7 @@ public class Loginpagemainpage extends Baseclass {
 	@Test(priority = 5) // (enabled = true)
 	private void addCustomerVoiceLevel() throws Throwable 
 	{
-	
+
 		Thread.sleep(2000);
 		Add_customer_lvl a2 = new Add_customer_lvl(driver);
 		String data = elib.getdatafromExcel("Sheet1", 1, 0) + rlib.randomnum();
@@ -124,9 +117,9 @@ public class Loginpagemainpage extends Baseclass {
 		Thread.sleep(2000);
 		a2.clickbackbtn();
 		//driver.close();
-	}*/
+	}
 
-	@Test//(priority = 6)
+	@Test(priority = 6)
 	private void product_Improvementpage() throws Throwable
 	{
 		wlib.maximizeWindow(driver);
@@ -143,8 +136,8 @@ public class Loginpagemainpage extends Baseclass {
 		PI.Product();
 		js.executeScript("window.scrollBy(0,300)");
 	}
-	
-	@Test//(priority = 7)
+
+	@Test(priority = 7)
 	private void sparePartCatalogue() throws Throwable 
 	{
 		wlib.maximizeWindow(driver);
@@ -158,9 +151,9 @@ public class Loginpagemainpage extends Baseclass {
 		ss.getUrltxtfld();
 		ss.sparePart(urlp1,urlp2,urlp3);
 		ss.getUploadbtn();
-         List<WebElement> elements = driver.findElements(By.xpath("//a[@ngbtooltip='Publish']"));
-	
-		elements.get(0).click();
-	//	ss.publish_notify();
+		Thread.sleep(2000);
+		WebElement elements = driver.findElement(By.xpath("(//div[@class='d-flex justify-content-end flex-shrink-0 gap-1']//following-sibling::*)[20]"));
+		Thread.sleep(2000);
+		elements.click();
 	}
 }

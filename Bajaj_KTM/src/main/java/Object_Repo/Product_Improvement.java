@@ -11,13 +11,13 @@ public class Product_Improvement {
 	{
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	@FindBy(xpath="(//div[.='Product Improvement'])[2]")
 	private WebElement productBTN;
-	
+
 	@FindBy(xpath="//button[.=' Download Excel Template']")
 	private WebElement DownloadExcel;
-	
+
 	@FindBy(xpath="//button[.=' Send Notification']")
 	private WebElement SendNotification;
 
@@ -32,7 +32,7 @@ public class Product_Improvement {
 	public WebElement getSendNotification() {
 		return SendNotification;
 	}
-	
+
 	public void Product() throws Throwable
 	{
 		Thread.sleep(2000);

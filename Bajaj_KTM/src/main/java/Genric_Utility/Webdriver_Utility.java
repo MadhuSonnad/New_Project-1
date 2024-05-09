@@ -1,9 +1,7 @@
 package Genric_Utility;
 import java.io.FileInputStream;
-import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-
 
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -11,14 +9,13 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Webdriver_Utility {
-		 
+
 	 	/**
-	 	 * Wait for page to load before identifying any synchronized element on DOM 
-	 	 * 
+	 	 * Wait for page to load before identifying any synchronized element on DOM
+	 	 *
 	 	 * @author MADHU
 	 	 */
 	 	public void ImapliciateWaite(WebDriver driver)
@@ -26,19 +23,19 @@ public class Webdriver_Utility {
 	 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	 	}
 	 	/**
-	 	 * 
+	 	 *
 	 	 * Maximize the window
-	 	 * 	
+	 	 *
 	 	 * @author MADHU
 	 	 */
-	 	
+
 	 	public void maximizeWindow(WebDriver driver)
 	 	{
 	 		driver.manage().window().maximize();
 	 	}
 	 	/**
 	 	 * After every action it will go for next action to perform
-	 	 * 
+	 	 *
 	 	 * @param driver
 	 	 *  @author MADHU
 	 	 */
@@ -46,27 +43,24 @@ public class Webdriver_Utility {
 	 	{
 	 		driver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
 	 	}
-	 	
+
 	 	public void Explicitwait(WebDriver driver)
 	 	{
 	 		WebDriverWait wait = new WebDriverWait(driver, 20);
 	 	}
-	 	
+
 	 	/**
 	 	 * used to switch to any window based on window title
-	 	 * 
-	 	 * 
+	 	 *
+	 	 *
 	 	 * @param driver
 	 	 * @param PartialWindowTitle
 	 	 *  @author MADHU
 	 	 */
 	 	public void SwitchToWindow(WebDriver driver,String PartialWindowTitle)
 	 	{
-	 		Set<String> allid = driver.getWindowHandles();	
-	 		Iterator<String> id = allid.iterator();
-	 		while(id.hasNext())
-	 		{
-	 			String wid = id.next();
+	 		Set<String> allid = driver.getWindowHandles();
+	 		for (String wid : allid) {
 	 			driver.switchTo().window(wid);
 	 			if(driver.getTitle().contains(wid))
 	 			{
@@ -77,8 +71,8 @@ public class Webdriver_Utility {
 
 	 	/**
 	 	 * used to switch to Alert window and Accept(click on button)
-	 	 * 
-	 	 * 
+	 	 *
+	 	 *
 	 	 * @param driver
 	 	 *  @author MADHU
 	 	 */
@@ -88,7 +82,7 @@ public class Webdriver_Utility {
 	 	}
 	 	/**
 	 	 *  used to switch to Alert window and Reject / cancel (click on button)
-	 	 * 
+	 	 *
 	 	 * @param driver
 	 	 *  @author MADHU
 	 	 */
@@ -98,8 +92,8 @@ public class Webdriver_Utility {
 	 	}
 	 	/**
 	 	 * used to switch to frame window based on Index
-	 	 * 
-	 	 * 
+	 	 *
+	 	 *
 	 	 * @param driver
 	 	 * @param id_name_Attribute
 	 	 * @author MADHU
@@ -111,8 +105,8 @@ public class Webdriver_Utility {
 
 	 	/**
 	 	 * used to select the value from the dropdown based on text
-	 	 * 
-	 	 * 
+	 	 *
+	 	 *
 	 	 * @param element
 	 	 * @param text
 	 	 * @author MADHU
@@ -125,8 +119,8 @@ public class Webdriver_Utility {
 	 	}
 	 	/**
 	 	 * used to select the value from the dropdown based on Index
-	 	 * 
-	 	 * 
+	 	 *
+	 	 *
 	 	 * @param element
 	 	 * @param index
 	 	 * @author MADHU
@@ -139,9 +133,9 @@ public class Webdriver_Utility {
 	 	}
 
 	 	/**this method is use to fetch the data from Excel
-	 	 * 
-	 	 * 
-	 	 * 
+	 	 *
+	 	 *
+	 	 *
 	 	 * @param sheetname
 	 	 * @param rowNum
 	 	 * @param cellNum
@@ -167,8 +161,8 @@ public class Webdriver_Utility {
 
 	 	/**
 	 	 * used to place mouse cursor on specific element
-	 	 * 
-	 	 * 	
+	 	 *
+	 	 *
 	 	 * @param driver
 	 	 * @param element
 	 	 * @author MADHU
@@ -182,7 +176,7 @@ public class Webdriver_Utility {
 	 	}
 	 	/**
 	 	 * used to right click on specific element
-	 	 * 
+	 	 *
 	 	 * @param driver
 	 	 * @param element
 	 	 * @author MADHU
@@ -194,8 +188,8 @@ public class Webdriver_Utility {
 	 	}
 	 	/**
 	 	 * used to move by offset to specific element
-	 	 * 
-	 	 * 
+	 	 *
+	 	 *
 	 	 * @param driver
 	 	 * @param x
 	 	 * @param y

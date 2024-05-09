@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Add_customer_Voice 
+public class Add_customer_Voice
 {
 	public 	Add_customer_Voice(WebDriver driver)
 	{
@@ -26,16 +26,16 @@ public class Add_customer_Voice
 
 	@FindBy(xpath="//button[.=' Search']")
 	private WebElement SearchBtn;
-	
+
 	@FindBy(xpath="(//button[@type=\"button\"])[4]")
 	private WebElement AddNEWcustomerVoice;
-	
+
 	@FindBy(xpath="(//input[@type=\"text\"])[2]")
 	private WebElement customervoicetxtfld;
-	
+
 	@FindBy(xpath="(//input[@type=\"text\"])[2]")
 	private WebElement customervoicetxtfldpassdata;
-	
+
 	@FindBy(xpath="(//button[@type=\"button\"])[5]")
 	private WebElement Savebtn;
 
@@ -74,14 +74,14 @@ public class Add_customer_Voice
 	public WebElement getSavebtn() {
 		return Savebtn;
 	}
-	
+
 	public void searchCustomerVoice()
 	{
 		addCustomer.click();
 		SearechCustomerVoice.click();
 		CustomerVoiceTextfld.click();
 	}
-	
+
 	public void senddata(String passdata)
 	{
 		CustomerVoiceTextfldPassdata.sendKeys(passdata);

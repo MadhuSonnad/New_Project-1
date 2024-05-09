@@ -13,38 +13,45 @@ public class ListenersScreenshot extends BaseclassScreeshot implements ITestList
 	ExtentTest test;
 	ExtentReports extent = Extentreport.getReport();
 
+	@Override
 	public void onTestStart(ITestResult result) {
 		test = extent.createTest(result.getMethod().getMethodName());
 	}
+	@Override
 	public void onTestSuccess(ITestResult result) {
 		test.log(Status.PASS, result.getMethod().getMethodName() + " -Testcase Passed");
 	}
-	public void onTestFailure(ITestResult result) 
+	@Override
+	public void onTestFailure(ITestResult result)
 	{
 		test.fail(result.getThrowable());
 		String FilePath = null;
-		
+
 		try {
 			FilePath = screenshoots(result.getMethod().getMethodName());
-		} 
-		catch (Exception e) 
+		}
+		catch (Exception e)
 		{
 			e.printStackTrace();
 		}
 		test.addScreenCaptureFromPath(FilePath, result.getMethod().getMethodName());
 	}
+	@Override
 	public void onTestSkipped(ITestResult result) {
 		test.skip(result.getThrowable());
 	}
 
+	@Override
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
 
 	}
 
+	@Override
 	public void onStart(ITestContext context) {
 
 	}
 
+	@Override
 	public void onFinish(ITestContext context) {
 		extent.flush();
 	}

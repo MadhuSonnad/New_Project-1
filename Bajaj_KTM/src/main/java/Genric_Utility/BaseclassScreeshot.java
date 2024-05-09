@@ -7,7 +7,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-public class BaseclassScreeshot 
+public class BaseclassScreeshot
 {
 	public static String screenshoots(String testcaseName) throws IOException {
 

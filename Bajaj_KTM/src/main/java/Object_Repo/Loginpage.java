@@ -5,13 +5,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Loginpage 
+public class Loginpage
 {
 	public Loginpage(WebDriver driver)
 	{
 		PageFactory.initElements(driver,this);
 	}
-	
+
 	@FindBy(xpath="//input[@placeholder='Username']")
 	private WebElement userNameTextField;
 

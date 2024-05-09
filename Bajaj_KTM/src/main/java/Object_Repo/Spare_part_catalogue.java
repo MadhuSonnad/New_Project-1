@@ -1,17 +1,15 @@
 package Object_Repo;
 
-import java.util.List;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Spare_part_catalogue 
+public class Spare_part_catalogue
 {
 	public Spare_part_catalogue(WebDriver driver)
 	{
-		PageFactory.initElements(driver, this);	
+		PageFactory.initElements(driver, this);
 	}
 
 	@FindBy(xpath="//div[.='Spare Part Catalogue']")
@@ -37,13 +35,13 @@ public class Spare_part_catalogue
 
 	@FindBy(xpath="//textarea[@rows='4']")
 	private WebElement descriptionpassadata;
-	
+
 	@FindBy(xpath=" //button[.=' Upload']")
 	private WebElement uploadbtn;
 
-	@FindBy(xpath="//a[@ngbtooltip='Publish']")
-	private List<WebElement> publishbtn;
-	
+	@FindBy(xpath="(//div[@class='d-flex justify-content-end flex-shrink-0 gap-1']//following-sibling::*[@class='action-btn-icon tbl-publish cursor-pointer ng-star-inserted'])[4]")
+	private WebElement publishbtn;
+
 	@FindBy(xpath="( //a[@ngbtooltip='Notify'])[2]")
 	private WebElement Notifybtn;
 
@@ -52,7 +50,7 @@ public class Spare_part_catalogue
 	}
 
 	public WebElement getAddurlbtn() {
-		return 
+		return
 				Addurlbtn;
 	}
 
@@ -83,8 +81,8 @@ public class Spare_part_catalogue
 	public WebElement getUploadbtn() {
 		return uploadbtn;
 	}
-	
-	public List<WebElement> getPublishbtn() {
+
+	public WebElement getPublishbtn() {
 		return publishbtn;
 	}
 
@@ -104,12 +102,12 @@ public void sparePart(String data1,String data2,String data3) throws Throwable
 	description.click();
 	descriptionpassadata.sendKeys(data3);
 	uploadbtn.click();
-	
+
 }
 public void publish_notify()
 {
-	
-	publishbtn.get(0).click();
+
+    publishbtn.click();
 	Notifybtn.click();
 }
 }

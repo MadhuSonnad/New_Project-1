@@ -1,38 +1,27 @@
 package Genric_Utility;
 
-import java.io.File;
-import java.io.IOException;
-
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.asserts.SoftAssert;
 
 import Object_Repo.Loginpage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Baseclass 
-{
-	SoftAssert assrt=new SoftAssert();
+public class Baseclass {
+	SoftAssert assrt = new SoftAssert();
 	public static WebDriver driver;
 	public WebDriver sdriver;
 
-	@org.testng.annotations.Parameters("BROWSER")
-
-	    @BeforeClass
-    	public void baseclass() throws Throwable {
+	@Parameters("BROWSER")
+	@BeforeClass
+	public void baseclass() throws Throwable {
 		File_Utility file1 = new File_Utility();
 		Webdriver_Utility web = new Webdriver_Utility();
 		String Browser = file1.getpropertyvalue("browser");
@@ -42,12 +31,10 @@ public class Baseclass
 					"C:\\Users\\madhu.sonnad\\eclipse-workspace\\Bajaj_KTM\\Browser\\chromedriver.exe");
 			// WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
-		}
-		else if (Browser.equalsIgnoreCase("firefox")) {
+		} else if (Browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
-		}
-		else if (Browser.equalsIgnoreCase("edge")) {
+		} else if (Browser.equalsIgnoreCase("edge")) {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 		} else {
@@ -56,6 +43,7 @@ public class Baseclass
 		sdriver = driver;
 		System.out.println("Launching browser");
 	}
+
 	@BeforeClass(dependsOnMethods = "baseclass()")
 	public void baseMethod() throws Throwable {
 		File_Utility file1 = new File_Utility();
@@ -69,27 +57,28 @@ public class Baseclass
 		page.login(UserName, PassWord);
 		System.out.println("Login application");
 	}
+
 	@AfterClass
-	public void afterMethod() 
-	{
+	public void afterMethod() {
 		System.out.println("Logout application");
 	}
+
 	@AfterClass(dependsOnMethods = "afterMethod()")
 	public void afterClass() {
 		System.out.println("close the browser");
 		assrt.assertAll();
 	}
+
 	@AfterTest
-	public void afterTest() 
-	{
+	public void afterTest() {
 		System.out.println("executed sucessfully");
 	}
+
 	@AfterSuite
-	public void afterSuite() 
-	{
+	public void afterSuite() {
 		System.out.println("database close");
 	}
-	
+
 //	public static String SS(String testcaseName) throws IOException {
 //
 //		TakesScreenshot tk = (TakesScreenshot)driver;
@@ -98,5 +87,5 @@ public class Baseclass
 //		FileUtils.copyFile(src, des);
 //		return System.getProperty("user.dir") + "//Reports" + testcaseName +".png";
 //	}
-	
+
 }

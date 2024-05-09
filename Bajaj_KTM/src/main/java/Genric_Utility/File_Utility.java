@@ -1,7 +1,6 @@
 package Genric_Utility;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.Properties;
 
 public class File_Utility {
@@ -11,7 +10,7 @@ public class File_Utility {
 		FileInputStream fis=new FileInputStream("./Browser/KTM.txt");
 		Properties pro=new Properties();
 		pro.load(fis);
-		
+
 		String value = pro.getProperty(key);
 		return value;
 	}
