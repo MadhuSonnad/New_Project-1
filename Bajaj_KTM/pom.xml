@@ -99,6 +99,11 @@ https://mvnrepository.com/artifact/org.testng/testng
 			<version>5.8.1</version>
 			<scope>compile</scope>
 		</dependency>
+		<!--<dependency>
+			<groupId>org.apache.maven.surefire</groupId>
+			<artifactId>surefire-junit47</artifactId>
+			<version>2.22.0</version>
+		</dependency>-->
 
 	</dependencies>
 	<build>
@@ -106,22 +111,15 @@ https://mvnrepository.com/artifact/org.testng/testng
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.22.0</version>
+				<!--<version>2.22.0</version>-->
 				<configuration>
+					<useSystemClassLoader>false</useSystemClassLoader>
+					<argLine>
+						-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
 					<suiteXmlFiles>
 						<suiteXmlFile>src\test\resources\test_suite.xml</suiteXmlFile>
 					</suiteXmlFiles>
-					<!--<includes>
-						<include>Loginpagemainpage.class</include>
-					</includes>-->
-				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>org.apache.maven.surefire</groupId>
-						<artifactId>surefire-junit47</artifactId>
-						<version>2.22.0</version>
-					</dependency>
-				</dependencies>
+				</configuration> 
 			</plugin>
 		</plugins>
 	</build>
