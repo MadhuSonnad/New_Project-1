@@ -23,16 +23,17 @@ public class Baseclass {
 	@BeforeClass
 	public void baseclass() throws Throwable {
 		File_Utility file1 = new File_Utility();
-		//Webdriver_Utility web = new Webdriver_Utility();
+		Webdriver_Utility web = new Webdriver_Utility();
 		String Browser = file1.getpropertyvalue("browser");
-		String chromePath = file1.getpropertyvalue("chromePath");
+		//String chromePath = file1.getpropertyvalue("chromePath");
 
-		if (Browser.contains("chrome")) 
-		{
-			System.setProperty("webdriver.chrome.driver", chromePath);
-			// WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
-		} else if (Browser.equalsIgnoreCase("firefox")) {
+//		if (Browser.contains("chrome")) 
+//		{
+//			System.setProperty("webdriver.chrome.driver", chromePath);
+//			// WebDriverManager.chromedriver().setup();
+//			driver = new ChromeDriver();
+//		}  
+		if (Browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		} else if (Browser.equalsIgnoreCase("edge")) {
