@@ -2,4 +2,4 @@ browser chrome
 url http://106.51.64.224:7007/
 un nithin.mathew@sysfore.com	
 pw Admin@123
-chromePath chromedriver.exe
+chromePath C:\\Users\\madhu.sonnad\\eclipse-workspace\\Bajaj_KTM\\Browser\\chromedriver.exe
