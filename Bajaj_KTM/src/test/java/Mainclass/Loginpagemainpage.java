@@ -33,7 +33,7 @@ public class Loginpagemainpage extends Baseclass {
 	JavascriptExecutor js;
 
 
-	/*	@Test(priority = 2, enabled = true)
+		@Test(priority = 2, enabled = true)
 	public void Loginpage() throws Throwable 
 	{
 		driver.manage().window().maximize();
@@ -124,9 +124,9 @@ public class Loginpagemainpage extends Baseclass {
 		Thread.sleep(2000);
 		a2.clickbackbtn();
 		//driver.close();
-	}*/
+	}
 
-	@Test//(priority = 6)
+	@Test(priority = 6)
 	private void product_Improvementpage() throws Throwable
 	{
 		wlib.maximizeWindow(driver);
@@ -144,7 +144,7 @@ public class Loginpagemainpage extends Baseclass {
 		js.executeScript("window.scrollBy(0,300)");
 	}
 	
-	@Test//(priority = 7)
+	@Test(priority = 7)
 	private void sparePartCatalogue() throws Throwable 
 	{
 		wlib.maximizeWindow(driver);
