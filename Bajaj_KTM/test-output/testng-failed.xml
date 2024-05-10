@@ -5,19 +5,14 @@
     <classes>
       <class name="Mainclass.Loginpagemainpage">
         <methods>
-          <include name="Bannerup"/>
           <include name="addCustomerVoiceLevel"/>
           <include name="Loginpage"/>
           <include name="baseclass"/>
           <include name="afterSuite"/>
-          <include name="product_Improvementpage"/>
-          <include name="sparePartCatalogue"/>
-          <include name="baseMethod"/>
-          <include name="afterClass"/>
-          <include name="addCustomrVoicee"/>
           <include name="afterTest"/>
           <include name="afterMethod"/>
-          <include name="addCustomerLevel"/>
+          <include name="baseMethod"/>
+          <include name="afterClass"/>
         </methods>
       </class> <!-- Mainclass.Loginpagemainpage -->
     </classes>
