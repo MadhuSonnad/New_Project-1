@@ -1,4 +1,4 @@
-browser firefox
+browser edge
 url http://106.51.64.224:7007/
 un nithin.mathew@sysfore.com	
 pw Admin@123

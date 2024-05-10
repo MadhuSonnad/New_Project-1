@@ -33,13 +33,22 @@ public class Baseclass {
 //			driver = new ChromeDriver();
 //		}
 		if (Browser.equalsIgnoreCase("firefox")) {
+			
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
+			
+			//System.out.println("if block");
+			
 		} else if (Browser.equalsIgnoreCase("edge")) {
+			
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
+			System.out.println("else if block");
 		} else {
-			driver = new FirefoxDriver();
+			
+			driver = new EdgeDriver();
+			System.out.println("else block");
+			
 		}
 		sdriver = driver;
 		System.out.println("Launching browser");
