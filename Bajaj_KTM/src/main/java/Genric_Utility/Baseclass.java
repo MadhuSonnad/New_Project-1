@@ -1,7 +1,6 @@
 package Genric_Utility;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
@@ -25,25 +24,21 @@ public class Baseclass {
 		File_Utility file1 = new File_Utility();
 		Webdriver_Utility web = new Webdriver_Utility();
 		String Browser = file1.getpropertyvalue("browser");
-		//String chromePath = file1.getpropertyvalue("chromePath");
+		// String chromePath = file1.getpropertyvalue("chromePath");
 
-//		if (Browser.contains("chrome")) 
+//		if (Browser.contains("chrome"))
 //		{
 //			System.setProperty("webdriver.chrome.driver", chromePath);
 //			// WebDriverManager.chromedriver().setup();
 //			driver = new ChromeDriver();
-//		}  
-		if (Browser.equalsIgnoreCase("firefox")) 
-		{
+//		}
+		if (Browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
-		}
-		else if (Browser.equalsIgnoreCase("edge")) 
-		{
+		} else if (Browser.equalsIgnoreCase("edge")) {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
-		} 
-		else {
+		} else {
 			driver = new FirefoxDriver();
 		}
 		sdriver = driver;
