@@ -1,6 +1,8 @@
 package Genric_Utility;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
@@ -26,29 +28,31 @@ public class Baseclass {
 		String Browser = file1.getpropertyvalue("browser");
 		// String chromePath = file1.getpropertyvalue("chromePath");
 
-//		if (Browser.contains("chrome"))
-//		{
-//			System.setProperty("webdriver.chrome.driver", chromePath);
-//			// WebDriverManager.chromedriver().setup();
-//			driver = new ChromeDriver();
-//		}
+		if (Browser.contains("chrome")) {
+			System.setProperty("webdriver.chrome.driver",
+					"C:\\Users\\madhu.sonnad\\git\\repository\\New\\Bajaj_KTM\\Browser\\chromedriver.exe");
+		//	ChromeOptions op = new ChromeOptions();
+		//	op.setBinary("C:\\Users\\madhu.sonnad\\Downloads\\chrome-win64\\chrome-win64\\chrome.exe");
+			// WebDriverManager.chromedriver().setup();
+			//driver = new ChromeDriver();
+		}
 		if (Browser.equalsIgnoreCase("firefox")) {
-			
+
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
-			
-			//System.out.println("if block");
-			
+
+			// System.out.println("if block");
+
 		} else if (Browser.equalsIgnoreCase("edge")) {
-			
+
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 			System.out.println("else if block");
 		} else {
-			
-			driver = new EdgeDriver();
+
+			driver = new ChromeDriver();
 			System.out.println("else block");
-			
+
 		}
 		sdriver = driver;
 		System.out.println("Launching browser");
@@ -89,13 +93,13 @@ public class Baseclass {
 		System.out.println("database close");
 	}
 
-//	public static String SS(String testcaseName) throws IOException {
-//
-//		TakesScreenshot tk = (TakesScreenshot)driver;
-//		File src = tk.getScreenshotAs(OutputType.FILE);
-//		File des = new File(System.getProperty("user.dir") + "//Reports" + testcaseName +".png");
-//		FileUtils.copyFile(src, des);
-//		return System.getProperty("user.dir") + "//Reports" + testcaseName +".png";
-//	}
+	//	public static String SS(String testcaseName) throws IOException {
+	//
+	//		TakesScreenshot tk = (TakesScreenshot)driver;
+	//		File src = tk.getScreenshotAs(OutputType.FILE);
+	//		File des = new File(System.getProperty("user.dir") + "//Reports" + testcaseName +".png");
+	//		FileUtils.copyFile(src, des);
+	//		return System.getProperty("user.dir") + "//Reports" + testcaseName +".png";
+	//	}
 
 }

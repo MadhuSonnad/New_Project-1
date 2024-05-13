@@ -5,12 +5,11 @@
     <classes>
       <class name="Mainclass.Loginpagemainpage">
         <methods>
-          <include name="addCustomerVoiceLevel"/>
-          <include name="Loginpage"/>
           <include name="baseclass"/>
           <include name="afterSuite"/>
           <include name="afterTest"/>
           <include name="afterMethod"/>
+          <include name="sparePartCatalogue"/>
           <include name="baseMethod"/>
           <include name="afterClass"/>
         </methods>

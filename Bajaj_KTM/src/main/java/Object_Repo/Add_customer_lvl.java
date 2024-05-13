@@ -24,7 +24,7 @@ public class Add_customer_lvl {
 	@FindBy(xpath="(//button[.=' Save'])[1]")
 	private WebElement savebtn;
 
-	@FindBy(xpath="(//span[@class='svg-icon svg-icon-3'])[3]")
+	@FindBy(xpath="(//span[@class='svg-icon svg-icon-3']/following::*)[7]")
 	private WebElement arrowbtn;
 
 	@FindBy(xpath="(//button[@type='button'])[2]")
@@ -91,10 +91,12 @@ public class Add_customer_lvl {
 	{
 		customervoicelvltxtfldpassdata.sendKeys(passdataa);
 	}
-	public void clickbuttons()
+	public void clickbuttons() throws Throwable
 	{
 		savebtn.click();
+		Thread.sleep(2000);
 		arrowbtn.click();
+		Thread.sleep(2000);
 		addbtn.click();
 		clicktxtfild.click();
 	}
@@ -104,6 +106,8 @@ public class Add_customer_lvl {
 	}
 	public void clickbackbtn() throws Throwable
 	{
+		
+		Thread.sleep(2000);
 		savebtnss.click();
 		Thread.sleep(2000);
 		backbtn.click();
