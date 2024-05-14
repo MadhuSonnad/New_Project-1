@@ -31,10 +31,6 @@ public class Baseclass {
 		if (Browser.contains("chrome")) {
 			System.setProperty("webdriver.chrome.driver",
 					"C:\\Users\\madhu.sonnad\\git\\repository\\New\\Bajaj_KTM\\Browser\\chromedriver.exe");
-		//	ChromeOptions op = new ChromeOptions();
-		//	op.setBinary("C:\\Users\\madhu.sonnad\\Downloads\\chrome-win64\\chrome-win64\\chrome.exe");
-			// WebDriverManager.chromedriver().setup();
-			//driver = new ChromeDriver();
 		}
 		if (Browser.equalsIgnoreCase("firefox")) {
 
