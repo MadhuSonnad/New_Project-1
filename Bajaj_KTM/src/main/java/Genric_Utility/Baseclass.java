@@ -46,7 +46,7 @@ public class Baseclass {
 			System.out.println("else if block");
 		} else {
 
-			driver = new ChromeDriver();
+			driver = new EdgeDriver();
 			System.out.println("else block");
 
 		}
