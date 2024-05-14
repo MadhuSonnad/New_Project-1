@@ -9,7 +9,7 @@
           <include name="afterSuite"/>
           <include name="afterTest"/>
           <include name="afterMethod"/>
-          <include name="sparePartCatalogue"/>
+          <include name="product_Improvementpage"/>
           <include name="baseMethod"/>
           <include name="afterClass"/>
         </methods>
