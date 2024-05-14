@@ -31,7 +31,8 @@ public class Loginpagemainpage extends Baseclass {
 	JavascriptExecutor js;
 
 	@Test(priority = 2, enabled = true)
-	public void Loginpage() throws Throwable {
+	public void Loginpage() throws Throwable 
+	{
 		driver.manage().window().maximize();
 		wlib.ImapliciateWaite(driver);
 		js = (JavascriptExecutor) driver;
@@ -54,15 +55,14 @@ public class Loginpagemainpage extends Baseclass {
 		// assert.assertEquals(false, "Script make fail");
 	}
 
-	@Test(priority = 1, enabled = false)
+	@Test(priority = 1, enabled = true)
 	private void Bannerup() throws Throwable
-
 	{
-		wlib.ImapliciateWaite(driver);
+		//wlib.ImapliciateWaite(driver);
 		js = (JavascriptExecutor) driver;
 		Bannerupload upload = new Bannerupload(driver);
-		WebElement element3 = driver.findElement(By.xpath("(//button[@type='button'])[1]")); //
-		element3.click();
+		WebElement element3 = driver.findElement(By.xpath("(//button[@type='button'])[1]")); 
+		//element3.click();
 		js.executeScript("arguments[0].click()", element3);
 		Thread.sleep(2000);
 		upload.bannerUpload();
@@ -73,8 +73,9 @@ public class Loginpagemainpage extends Baseclass {
 		Thread.sleep(2000);
 	}
 
-	@Test(priority = 3, enabled = false)
-	private void addCustomrVoicee() throws Throwable {
+	@Test(priority = 3, enabled = true)
+	private void addCustomrVoicee() throws Throwable 
+	{
 		wlib.ImapliciateWaite(driver);
 		Add_customer_Voice ad = new Add_customer_Voice(driver);
 		ad.searchCustomerVoice();
@@ -107,7 +108,6 @@ public class Loginpagemainpage extends Baseclass {
 
 	@Test(priority = 5, enabled = true)
 	private void addCustomerVoiceLevel() throws Throwable
-
 	{
 		wlib.ImapliciateWaite(driver);
 		Thread.sleep(2000);
@@ -122,7 +122,8 @@ public class Loginpagemainpage extends Baseclass {
 	}
 
 	@Test(priority = 6)
-	private void product_Improvementpage(WebDriver JavascriptExecutor) throws Throwable {
+	private void product_Improvementpage() throws Throwable 
+	{
 		wlib.maximizeWindow(driver);
 		wlib.ImapliciateWaite(driver);
 		js = (JavascriptExecutor) driver;
